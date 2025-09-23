@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Planeja+ Dashboard Design System - Light Vibrant Theme
+All colors MUST be HSL.
+Core palette: #5e17eb (vibrant purple), #35009d (deep purple), #f6862e (vibrant orange)
+*/
+
+@layer base {
+  :root {
+    /* Main backgrounds - Light clean theme */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 240 5% 26%; /* Dark gray for text */
+
+    /* Sidebar - Clean light background */
+    --sidebar-background: 240 5% 98%; /* Very light gray */
+    --sidebar-foreground: 240 4% 46%; /* Medium gray text */
+    --sidebar-primary: 262 88% 51%; /* Vibrant purple #5e17eb */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 240 5% 95%; /* Light gray hover */
+    --sidebar-accent-foreground: 262 88% 51%; /* Vibrant purple text */
+    --sidebar-border: 240 5% 90%; /* Subtle border */
+    --sidebar-ring: 262 88% 51%; /* Vibrant purple focus */
+
+    /* Cards - Clean white with subtle borders */
+    --card: 0 0% 100%; /* White background */
+    --card-foreground: 240 5% 26%; /* Dark gray text */
+
+    /* Primary brand color - Vibrant purple */
+    --primary: 262 88% 51%; /* #5e17eb - vibrant purple */
+    --primary-foreground: 0 0% 100%; /* White text on purple */
+
+    /* Secondary elements - Deep purple */
+    --secondary: 262 100% 31%; /* #35009d - deep purple */
+    --secondary-foreground: 0 0% 100%; /* White text */
+
+    /* Muted elements */
+    --muted: 240 5% 95%; /* Very light gray backgrounds */
+    --muted-foreground: 240 4% 46%; /* Medium gray text */
+
+    /* Accent for highlights - Vibrant orange */
+    --accent: 24 92% 57%; /* #f6862e - vibrant orange */
+    --accent-foreground: 0 0% 100%; /* White text */
+
+    /* Interactive states */
+    --hover: 240 5% 92%; /* Light hover backgrounds */
+    --active: 262 88% 45%; /* Slightly darker purple active state */
+
+    /* Progress bars */
+    --progress-track: 240 5% 90%; /* Light gray track */
+    
+    /* Chart colors - Vibrant professional palette */
+    --chart-1: 262 88% 51%; /* Completed - vibrant purple */
+    --chart-2: 200 85% 55%; /* In progress - light blue */
+    --chart-3: 24 92% 57%; /* Pending - vibrant orange */
+    --chart-4: 10 100% 65%; /* Overdue - orange-red #ff6d4d */
+    --chart-5: 0 75% 60%; /* Error/critical */
+    --progress-fill: 262 88% 51%; /* Purple progress fill */
+    --progress-fill-secondary: 24 92% 57%; /* Orange secondary progress */
+
+    /* Logo colors */
+    --logo-column-1: 262 88% 51%; /* #5e17eb */
+    --logo-column-2: 10 100% 65%; /* #ff6d4d */
+    --logo-column-3: 24 92% 57%; /* #f6862e */
+    --logo-text: 242 67% 21%; /* #171658 */
+    --logo-plus: 10 100% 65%; /* #ff6d4d */
+
+    /* Utility colors */
+    --destructive: 0 75% 60%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text */
+
+    --border: 240 5% 90%; /* Light subtle borders */
+    --input: 240 5% 95%; /* Light input backgrounds */
+    --ring: 262 88% 51%; /* Purple focus rings */
+
+    --radius: 0.75rem; /* Rounded corners for modern feel */
+
+    /* Popover elements */
+    --popover: 0 0% 100%; /* White popover background */
+    --popover-foreground: 240 5% 26%; /* Dark text */
+
+    /* Brand gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(262 88% 51%), hsl(262 100% 31%));
+    --gradient-accent: linear-gradient(135deg, hsl(24 92% 57%), hsl(10 100% 65%));
+    
+    /* Shadows - Subtle for light theme */
+    --shadow-card: 0 2px 8px -2px hsl(240 5% 26% / 0.08);
+    --shadow-hover: 0 4px 16px -4px hsl(240 5% 26% / 0.12);
+    --shadow-focus: 0 0 0 3px hsl(262 88% 51% / 0.12);
+
+    /* Transitions */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus styles for accessibility */
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+  
+  /* Custom scrollbar - Light theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.3);
+  }
+
+  /* Add line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
